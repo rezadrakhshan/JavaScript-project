@@ -14,13 +14,14 @@
 }
 
 .sidebar {
+    position: relative;
+    transition: all 0.3s ease;
     width: 300px;
     background-color: rgb(22, 27, 34);
     color: white;
     padding: 10px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
-    transition: all 0.3s ease;
 }
 
 .sidebar-close {
@@ -52,6 +53,7 @@ svg{
 
 .hide{
     position: relative;
+    transform: translate(-300px);
     right: 330px;
 }
 .hide-btn{
@@ -60,3 +62,4 @@ svg{
 hr{
     margin: 5px;
 }
+

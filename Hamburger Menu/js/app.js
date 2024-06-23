@@ -6,7 +6,7 @@ btn_open.addEventListener("click", () =>{
     sidebar.classList.toggle("hide")
     btn_open.classList.toggle("hide-btn")
 })
-sidebar.addEventListener("click",() => {
+sidebar_close.addEventListener("click",() => {
     sidebar.classList.toggle("hide")
     btn_open.classList.toggle("hide-btn")
 })
