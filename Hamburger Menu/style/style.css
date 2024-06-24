@@ -83,4 +83,7 @@ svg {
 
 hr {
     margin: 5px;
+    background-color: #30363DB3;
+    border: none;
+    height: 1px;
 }
