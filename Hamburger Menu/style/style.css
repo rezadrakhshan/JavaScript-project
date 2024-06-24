@@ -19,7 +19,6 @@
     left: 0;
     width: 300px;
     background-color: rgb(22, 27, 34);
-    color: white;
     padding: 10px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -43,21 +42,39 @@ p {
     padding: 0;
 }
 
+h4 {
+    color: #E6EDF3;
+
+}
+
+p {
+    color: #8d978d;
+}
+
 a {
     display: block;
     text-decoration: none;
     padding: 6px 8px;
-    color: white;
+    color: #E6EDF3;
     padding: 10px;
 }
 
-a:hover {
+.item:hover {
     background-color: rgb(48, 55, 65);
     border-radius: 10px;
 }
 
 svg {
-    color: white;
+    color: var(--fgColor-muted, var(--color-fg-muted, #848d97))
+}
+
+.item {
+    display: flex;
+}
+
+.item svg {
+    padding-top: 10px;
+    padding-left: 10px;
 }
 
 .hide-btn {
