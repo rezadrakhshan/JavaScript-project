@@ -1,0 +1,48 @@
+* {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+header {
+    display: none;
+    text-align: center;
+    color: rgb(196, 196, 196);
+}
+
+body {
+    background-color: #222222;
+}
+
+.myform {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+form {
+    color: rgb(196, 196, 196);
+}
+
+input {
+    width: 600px;
+    background: transparent;
+    border-bottom: 1px solid gray;
+    color: rgb(196, 196, 196);
+    border-right: none;
+    padding: 10px;
+}
+
+input:focus {
+    border-bottom: 1px solid #11998e;
+    outline: none;
+    caret-color: #11998e;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.set_display{
+    display: block;
+}
