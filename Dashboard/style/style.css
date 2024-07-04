@@ -9,14 +9,9 @@ body {
 
 }
 
-.top-left {
-    display: flex;
-    height: 40px;
-}
-
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     height: 10vh;
     max-width: 100%;
@@ -26,61 +21,6 @@ header {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     box-shadow: -10px 0 15px rgba(0, 0, 0, 10);
-}
-
-ul {
-    list-style-type: none;
-}
-
-li {
-    display: inline-block;
-    font-size: 20px;
-    margin-right: 30px;
-}
-
-li:last-child {
-    margin-right: 0px;
-}
-
-a {
-    text-decoration: none;
-    color: #EEEEEE;
-}
-
-a:hover {
-    color: #76ABAE;
-    transition: all 0.4s ease-in-out;
-}
-
-header button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    background: none;
-    padding-right: 40px;
-}
-
-.sidebar {
-    position: absolute;
-    top: 0;
-    left: -300%;
-    transition: left 0.3s ease;
-    width: 300px;
-    background-color: #31363F;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    color: #EEEEEE;
-    padding: 20px;
-    box-shadow: 0 0 80px rgba(0, 0, 0, 10);
-}
-
-.sidebar.show {
-    left: 0;
-}
-
-.sidebar-item-title {
-    padding: 20px;
 }
 
 header input {
@@ -101,10 +41,6 @@ header input:focus {
 }
 
 header input:hover {
-    cursor: pointer;
-}
-
-svg:hover {
     cursor: pointer;
 }
 
@@ -145,56 +81,9 @@ svg:hover {
     caret-color: #11998e;
 }
 
-.sidebar h4,
-p {
-    margin: 0;
-    padding: 0;
-}
-
-.sidebar h4 {
-    color: #E6EDF3;
-
-}
-
-.sidebar p {
-    color: #8d978d;
-}
-
-.sidebar a {
-    display: block;
-    text-decoration: none;
-    padding: 6px 8px;
-    color: #E6EDF3;
-    padding: 10px;
-}
-
-.item:hover {
-    background-color: #222831;
-    border-radius: 10px;
-}
-
-.sidebar svg {
-    color: var(--fgColor-muted, var(--color-fg-muted, #848d97))
-}
-
-.item {
-    display: flex;
-}
-
-.item svg {
-    padding-top: 10px;
-    padding-left: 10px;
-}
-
-
-hr {
-    margin: 5px;
-    background-color: #30363DB3;
-    border: none;
-    height: 1px;
-}
-.book-list{
+.book-list {
     display: flex;
     justify-content: space-around;
     padding: 20px;
+    flex-wrap: wrap;
 }
