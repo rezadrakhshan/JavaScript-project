@@ -191,3 +191,7 @@ hr {
     border: none;
     height: 1px;
 }
+.book-list{
+    display: flex;
+    justify-content: space-around;
+}

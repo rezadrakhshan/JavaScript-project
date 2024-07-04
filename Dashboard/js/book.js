@@ -1,22 +1,30 @@
-const sidebarBtn = document.getElementsByTagName("button")[0]
-const sidebar = document.getElementsByClassName("sidebar")[0]
-const searchBox = document.getElementsByClassName("search-box")[0]
+let books = []
+const bookForm = document.querySelector(".book-form")
+const bookTable = document.querySelector(".book-body")
 
-
-sidebarBtn.addEventListener("click", (e) => {
-    e.stopPropagation()
-    sidebar.classList.toggle("show")
-    searchBox.classList.remove("open")
-})
-document.addEventListener("click", (e) => {
-    if (!sidebar.contains(e.target) && e.target !== sidebarBtn && !searchBox.contains(e.target)) {
-        sidebar.classList.remove("show");
-        searchBox.classList.remove("open")
+bookForm.addEventListener("submit", (e) => {
+    e.preventDefault()
+    const newBook = {
+        name: e.target.name.value,
+        author: e.target.author.value,
+        price: e.target.price.value,
+        genre: e.target.genre.value
     }
+    books.push(newBook)
+    renderList()
+    bookForm.reset()
 })
-
-document.getElementsByTagName("input")[0].addEventListener("click", (e) => {
-    e.stopPropagation()
-    sidebar.classList.remove("show")
-    searchBox.classList.toggle("open")
-})
+function renderList(){
+    bookTable.innerHTML = ""
+    books.forEach((item) => {
+        bookTable.innerHTML += `
+        <tr>
+        <td>${books.indexOf(item) + 1}</td>
+        <td>${item.name}</td>
+        <td>${item.author}</td>
+        <td>$ ${item.price}</td>
+        <td>${item.genre}</td>
+        </tr>
+        `
+    })
+}
