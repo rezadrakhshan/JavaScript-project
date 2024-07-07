@@ -87,3 +87,15 @@ header input:hover {
     padding: 20px;
     flex-wrap: wrap;
 }
+.search-item{
+    display: flex;
+    color: #EEEEEE;
+    padding: 10px;
+    transition: all 0.2s ease;
+}
+.search-item svg{
+    padding-top: 2px;
+}
+.search-item p{
+    padding-left: 5px;
+}
