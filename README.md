@@ -1,7 +1,7 @@
 # Developer - Seyed Reza Derakhshan
 
 # Task
-> JavaScript projects - https://github.com/rezadrakhshan/JavaScript-project/
+> Dashboard - https://rezadrakhshan.github.io/JavaScript-project/Dashboard/
 
 ## Table of contents
 * FizzBuzz
@@ -35,5 +35,4 @@
 ## Status
 > Course - Incomplete
 
-## Last Live
-> https://rezadrakhshan.github.io/JavaScript-project/Dashboard/
+
