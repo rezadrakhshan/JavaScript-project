@@ -26,12 +26,6 @@
 >
 > Feel free to explore the branches and check out the different exercise solutions. I welcome any feedback or suggestions for improvement
 
-## Screenshots
-![Example screenshot](./img/Homepage.png)<br>
-
-![Example screenshot](./img/paymentPage.png)<br>
-
-![Example screenshot](./img/paymentSuccess.png)
 
 ## Technologies
 * HTML5
