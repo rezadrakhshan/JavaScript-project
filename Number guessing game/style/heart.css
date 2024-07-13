@@ -1,0 +1,29 @@
+.heart{
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+svg{
+    color: red;
+    font-size: 80px;
+    animation: beat 0.9s infinite;
+    text-shadow: 
+    0 0 5px red,
+    0 0 45px red,
+    0 0 90px red
+    ;
+    padding: 5px;
+}
+
+@keyframes beat{
+    0%{
+        transform: scale(1);
+    }
+    20%{
+        transform: scale(1.15);
+    }
+    40%{
+        transform: scale(1.4);
+    }
+}
