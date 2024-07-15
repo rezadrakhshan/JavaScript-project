@@ -1,7 +1,7 @@
 # Developer - Seyed Reza Derakhshan
 
 # Task
-> Dashboard - https://rezadrakhshan.github.io/JavaScript-project/Dashboard/
+> Dashboard - https://rezadrakhshan.github.io/JavaScript-project/ChronoBirth/
 
 ## Table of contents
 * FizzBuzz
