@@ -15,8 +15,10 @@ body{
     flex-direction: column;
 }
 h3{
-    padding: 20px;
+    text-align: center;
     letter-spacing: 10px;
+    position: relative;
+    top: 60px;
 }
 .clock{
     position: relative;
@@ -39,3 +41,22 @@ h3{
     text-align: center;
     padding: 10px;
 }
+#date{
+    padding: 10px;
+    border: none;
+    width: 50%;
+    background: none;
+    color: white;
+    font-size: large;
+    border-bottom: 1px solid #2196f3;
+}
+form{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 100px;
+}
+input:focus{
+    outline: none;
+}
+  
