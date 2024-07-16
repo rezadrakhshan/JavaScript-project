@@ -1,6 +1,6 @@
 # Developer - Seyed Reza Derakhshan
 
-# Last Deployment
+## Last Deployment
 > Dashboard - https://rezadrakhshan.github.io/JavaScript-project/ChronoBirth/
 
 ## Table of contents
