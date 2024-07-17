@@ -1,0 +1,103 @@
+/* Existing CSS code */
+* {
+    margin: 0%;
+    padding: 0%;
+}
+body {
+    background-color: #060a1f;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    flex-direction: column;
+}
+h3 {
+    text-align: center;
+    letter-spacing: 10px;
+    position: relative;
+    top: 60px;
+}
+.clock {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    width: 60%;
+    -webkit-box-reflect: below 1px linear-gradient(transparent,#0004);
+}
+.box {
+    width: 200px;
+}
+.box h1 {
+    background-color: #2196f3;
+    padding: 20px;
+    font-size: 100px;
+    text-align: center;
+}
+.box h2 {
+    background-color: #127fd6;
+    text-align: center;
+    padding: 10px;
+}
+#date {
+    padding: 10px;
+    border: none;
+    width: 50%;
+    background: none;
+    color: white;
+    font-size: large;
+    border-bottom: 1px solid #2196f3;
+}
+form {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 100px;
+}
+input:focus {
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    .clock {
+        flex-direction: column;
+        width: 80%;
+    }
+    .box {
+        width: 100%;
+    }
+    .box h1 {
+        font-size: 80px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    h3 {
+        font-size: 20px;
+        top: 30px;
+    }
+    .container {
+        height: 60vh;
+    }
+    .clock {
+        width: 100%;
+    }
+    .box h1 {
+        font-size: 60px;
+        padding: 5px;
+    }
+    .box h2 {
+        font-size: 14px;
+        padding: 5px;
+    }
+    #date {
+        width: 80%;
+    }
+    form {
+        top: 50px;
+    }
+}
