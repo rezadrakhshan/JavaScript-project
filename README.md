@@ -1,7 +1,7 @@
 # Developer - Seyed Reza Derakhshan
 
 ## Last Deployment
-> Dashboard - https://rezadrakhshan.github.io/JavaScript-project/ChronoBirth/
+> https://rezadrakhshan.github.io/JavaScript-project/static/
 
 ## Table of contents
 * FizzBuzz
