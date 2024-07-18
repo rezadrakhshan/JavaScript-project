@@ -123,3 +123,15 @@ input:focus {
         top: 50px;
     }
 }
+.my-popup-class {
+    background-color: #060a1f;
+    border: 2px solid #333;
+    color: white;
+}
+.my-title-class {
+    color: #3ce74a;
+}
+.my-confirm-button-class {
+    background-color: #3498db;
+    color: white;
+}
