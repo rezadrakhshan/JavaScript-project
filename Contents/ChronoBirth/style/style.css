@@ -1,4 +1,4 @@
-/* Existing CSS code */
+
 * {
     margin: 0%;
     padding: 0%;
@@ -42,6 +42,9 @@ h3 {
     text-align: center;
     padding: 10px;
 }
+button{
+    display: none;
+}
 #date {
     padding: 10px;
     border: none;
@@ -56,6 +59,7 @@ form {
     justify-content: center;
     position: relative;
     top: 100px;
+
 }
 input:focus {
     outline: none;
@@ -63,15 +67,33 @@ input:focus {
 
 @media (max-width: 768px) {
     .clock {
-        flex-direction: column;
+        flex-direction: row;
         width: 80%;
     }
     .box {
-        width: 100%;
+        width: 30%;
     }
     .box h1 {
         font-size: 80px;
         padding: 10px;
+    }
+    #date{
+        width: 100%;
+    }
+    form{
+        flex-direction: column;
+        width: 50%;
+        margin: auto;
+    }
+    button{
+        display: block;
+        margin: auto;
+        padding: 2%;
+        margin-top: 5%;
+        border: none;
+        background-color: #2196f3;
+        color: white;
+        border-radius: 10%;
     }
 }
 
