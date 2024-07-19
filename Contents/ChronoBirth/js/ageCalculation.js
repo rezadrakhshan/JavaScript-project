@@ -13,7 +13,7 @@ ageForm.addEventListener("submit", (e) => {
       confirmButtonText: 'OK',
       customClass: {
           popup: 'my-popup-class',
-          title: 'my-title-class',
+          title: 'my-title-class-error',
           confirmButton: 'my-confirm-button-class',
       }
   });

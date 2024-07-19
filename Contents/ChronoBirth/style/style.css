@@ -128,8 +128,11 @@ input:focus {
     border: 2px solid #333;
     color: white;
 }
-.my-title-class {
+.my-title-class-success {
     color: #3ce74a;
+}
+.my-title-class-error {
+    color: #e73c3c;
 }
 .my-confirm-button-class {
     background-color: #3498db;
