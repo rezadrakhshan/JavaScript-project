@@ -1,0 +1,125 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0%;
+  padding: 0%;
+  background-color: #222831;
+  color: #eeeeee;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#box {
+  background-color: #393e46;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 528px;
+}
+
+#box h1{
+    font-size: 40px;
+}
+
+.container {
+  --borderWidth: 3px;
+  background: #393e46;
+  position: relative;
+  border-radius: var(--borderWidth);
+}
+.container:after {
+  content: "";
+  position: absolute;
+  top: calc(-1 * var(--borderWidth));
+  left: calc(-1 * var(--borderWidth));
+  height: calc(100% + var(--borderWidth) * 2);
+  width: calc(100% + var(--borderWidth) * 2);
+  background: linear-gradient(
+    60deg,
+    #f79533,
+    #f37055,
+    #ef4e7b,
+    #a166ab,
+    #5073b8,
+    #1098ad,
+    #07b39b,
+    #6fba82
+  );
+  border-radius: calc(2 * var(--borderWidth));
+  z-index: -1;
+  animation: animatedgradient 3s ease alternate infinite;
+  background-size: 300% 300%;
+}
+@keyframes animatedgradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.input-container{
+    margin-bottom: 20px;
+    display: flex;
+    width: 100%;
+    input{
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        outline: none;
+        font-size: 16px;
+    }
+    button{
+        padding: 10px 20px;
+        border: none;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        background-color: #00ADB5;
+        color: #eeeeee;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    button:hover{
+        background-color: #028086;
+    }
+    button:focus{
+        outline: none;
+    }
+
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    th, td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    th {
+        color: white;
+    }
+}
+.body-container{
+  height: 300px;
+  overflow-y: scroll;
+}
+.my-popup-class {
+  background-color: #222831;
+  border: 2px solid #333;
+  color: white;
+}
+.my-title-class-error {
+  color: #e74c3c;
+}
+.my-confirm-button-class {
+  background-color: #3498db;
+  color: #fff;
+}
+
