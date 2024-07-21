@@ -36,11 +36,7 @@ function renderTodos() {
     row.innerHTML = `
         <td>${item.title}</td>
         <td>${item.completed ? "Completed" : "Not Completed"}</td>
-        <td><button class="complete-btn" onclick="toggleCompleted(${
-          item.id
-        })">Toggle</button><button class="delete-btn" onclick="deleteTodo(${
-      item.id
-    })">Delete</button></td>
+        <td><button class="complete-btn"">Toggle</button><button class="delete-btn">Delete</button></td>
         `;
     todoTable.appendChild(row);
   });

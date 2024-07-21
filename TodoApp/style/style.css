@@ -123,3 +123,57 @@ table{
   color: #fff;
 }
 
+
+
+.body-container {
+  --sb-track-color: #34373d;
+  --sb-thumb-color: #48484b;
+  --sb-size: 14px;
+}
+
+.body-container::-webkit-scrollbar {
+  width: var(--sb-size)
+}
+
+.body-container::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 16px;
+}
+
+.body-container::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 16px;
+  
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .body-container {
+    scrollbar-color: var(--sb-thumb-color)
+                     var(--sb-track-color);
+  }
+}
+
+.complete-btn{
+  border: none;
+  background-color: #616161;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  &:hover{
+    background-color: #818181;
+    transition: background 0.4 ease;
+    cursor: pointer;
+  }
+}
+.delete-btn{
+  border: none;
+  background-color: #FF5252;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  &:hover{
+    background-color: #ff7575;
+    transition: background 0.4 ease;
+    cursor: pointer;
+  }
+}
