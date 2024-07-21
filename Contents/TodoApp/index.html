@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TodoApp</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+  </head>
+  <body>
+    <div class="container" id="box">
+      <div class="header">
+        <h1>Todo App</h1>
+      </div>
+      <form class="input-container">
+        <input
+          required
+          name="task"
+          type="text"
+          id="taskInput"
+          placeholder="Add a task..."
+        />
+        <button type="submit" id="addTaskBtn">Add</button>
+      </form>
+
+      <div class="body-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+            <tbody id="taskList"></tbody>
+        </table>
+    </div>
+    </div>
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
