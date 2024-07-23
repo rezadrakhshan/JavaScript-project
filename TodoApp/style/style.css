@@ -4,10 +4,11 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0%;
-  padding: 0%;
+  padding: 0% 5% 0% 5%;
   background-color: #222831;
   color: #eeeeee;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 #box {
   background-color: #393e46;
@@ -17,8 +18,26 @@ body {
   width: 528px;
 }
 
-#box h1{
-    font-size: 40px;
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+#box h1 {
+  font-size: 4em;
+  background: linear-gradient(270deg, #ff4b1f, #1fddff, #1fffa5, #1f7eff);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Brush Script MT", cursive;
+  animation: gradient-animation 4s ease infinite;
 }
 
 .container {
@@ -51,62 +70,62 @@ body {
   background-size: 300% 300%;
 }
 @keyframes animatedgradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-.input-container{
-    margin-bottom: 20px;
-    display: flex;
+.input-container {
+  margin-bottom: 20px;
+  display: flex;
+  width: 100%;
+  input {
     width: 100%;
-    input{
-        width: 100%;
-        padding: 10px;
-        border: none;
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
-        outline: none;
-        font-size: 16px;
-    }
-    button{
-        padding: 10px 20px;
-        border: none;
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
-        background-color: #00ADB5;
-        color: #eeeeee;
-        cursor: pointer;
-        font-size: 16px;
-    }
-    button:hover{
-        background-color: #028086;
-    }
-    button:focus{
-        outline: none;
-    }
-
+    padding: 10px;
+    border: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    outline: none;
+    font-size: 16px;
+  }
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #00adb5;
+    color: #eeeeee;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  button:hover {
+    background-color: #028086;
+  }
+  button:focus {
+    outline: none;
+  }
 }
-table{
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-    th, td {
-        padding: 15px;
-        text-align: left;
-        border-bottom: 1px solid #ddd;
-    }
-    th {
-        color: white;
-    }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  th,
+  td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  th {
+    color: white;
+  }
 }
-.body-container{
+.body-container {
   height: 300px;
   overflow-y: scroll;
 }
@@ -123,8 +142,6 @@ table{
   color: #fff;
 }
 
-
-
 .body-container {
   --sb-track-color: #34373d;
   --sb-thumb-color: #48484b;
@@ -132,7 +149,7 @@ table{
 }
 
 .body-container::-webkit-scrollbar {
-  width: var(--sb-size)
+  width: var(--sb-size);
 }
 
 .body-container::-webkit-scrollbar-track {
@@ -143,37 +160,151 @@ table{
 .body-container::-webkit-scrollbar-thumb {
   background: var(--sb-thumb-color);
   border-radius: 16px;
-  
 }
 
 @supports not selector(::-webkit-scrollbar) {
   .body-container {
-    scrollbar-color: var(--sb-thumb-color)
-                     var(--sb-track-color);
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
   }
 }
 
-.complete-btn{
+.complete-btn {
   border: none;
   background-color: #616161;
   color: white;
   padding: 5px;
   border-radius: 5px;
-  &:hover{
+  &:hover {
     background-color: #818181;
     transition: background 0.4 ease;
     cursor: pointer;
   }
 }
-.delete-btn{
+.delete-btn {
   border: none;
-  background-color: #FF5252;
+  background-color: #ff5252;
   color: white;
   padding: 5px;
   border-radius: 5px;
-  &:hover{
+  &:hover {
     background-color: #ff7575;
     transition: background 0.4 ease;
     cursor: pointer;
+  }
+}
+
+@media (max-wigth: 700px) {
+  #box {
+    width: 100%;
+    padding: 10px;
+  }
+  #box h1 {
+    font-size: 3rem;
+  }
+  table {
+    width: 100%;
+  }
+  button {
+    padding: 5px 10px;
+  }
+  input {
+    width: 100%;
+  }
+  button:hover {
+    background-color: #028086;
+  }
+  button:focus {
+    outline: none;
+  }
+  table th,
+  td {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  #box {
+    width: 100%;
+    padding: 10px;
+  }
+  #box h1 {
+    font-size: 3rem;
+  }
+  table {
+    width: 100%;
+  }
+  button {
+    padding: 5px 10px;
+  }
+  input {
+    width: 100%;
+  }
+  button:hover {
+    background-color: #028086;
+  }
+  button:focus {
+    outline: none;
+  }
+  table th,
+  td {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  #box {
+    width: 100%;
+    padding: 10px;
+  }
+  #box h1 {
+    font-size: 3rem;
+  }
+  table {
+    width: 100%;
+  }
+  button {
+    padding: 5px 10px;
+  }
+  input {
+    width: 100%;
+  }
+  button:hover {
+    background-color: #028086;
+  }
+  button:focus {
+    outline: none;
+  }
+  table th,
+  td {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 300px) {
+  #box {
+    width: 100%;
+    padding: 10px;
+  }
+  #box h1 {
+    font-size: 3rem;
+  }
+  table {
+    width: 100%;
+  }
+  button {
+    padding: 5px 10px;
+  }
+  input {
+    width: 100%;
+  }
+  button:hover {
+    background-color: #028086;
+  }
+  button:focus {
+    outline: none;
+  }
+  table th,
+  td {
+    padding: 10px;
   }
 }
