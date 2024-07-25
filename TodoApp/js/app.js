@@ -24,21 +24,44 @@ todoForm.addEventListener("submit", function (event) {
     };
     todos.push(newTodo);
     localStorage.setItem("todos", JSON.stringify(todos));
-    renderTodos();
+    renderTodos(todos);
     todoForm.reset();
   }
 });
 
-function renderTodos() {
+todoTable.addEventListener("click", (event) => {
+  if (event.target.classList.contains("delete-btn")) {
+    const taskID =
+      event.target.parentElement.parentElement.getAttribute("data-id");
+    todos = todos.filter((item) => item.id !== taskID);
+    renderTodos(todos);
+    localStorage.setItem("todos", JSON.stringify(todos));
+  } else if (event.target.classList.contains("complete-btn")) {
+    const taskID =
+    event.target.parentElement.parentElement.getAttribute("data-id");
+    todos.forEach((item) => {
+      if (item.id == taskID) {
+        item.completed = !item.completed
+        renderTodos(todos)
+        localStorage.setItem("todos",JSON.stringify(todos))
+      }
+    });
+  }
+});
+
+function renderTodos(list) {
   todoTable.innerHTML = "";
-  todos.forEach((item) => {
+  list.forEach((item) => {
     const row = document.createElement("tr");
+    row.setAttribute("data-id", item.id);
     row.innerHTML = `
-        <td>${item.title}</td>
+        <td>${item.completed ? "<del>" + item.title + "</del>" : item.title}</td>
         <td>${item.completed ? "Completed" : "Not Completed"}</td>
-        <td><button class="complete-btn"">Toggle</button><button class="delete-btn">Delete</button></td>
+        <td><button class="complete-btn"">${
+          item.completed ? "Redo" : "Done"
+        }</button><button class="delete-btn">Delete</button></td>
         `;
     todoTable.appendChild(row);
   });
 }
-renderTodos();
+renderTodos(todos);
