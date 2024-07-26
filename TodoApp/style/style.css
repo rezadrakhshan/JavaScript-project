@@ -193,6 +193,16 @@ table {
   }
 }
 
+.buttons button{
+  background-color: #00adb5;
+  border: none;
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+
 @media (max-wigth: 700px) {
   #box {
     width: 100%;
