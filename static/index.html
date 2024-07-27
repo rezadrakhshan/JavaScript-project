@@ -1,55 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript-projects</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-    <link rel="stylesheet" href="style.css">
-
-</head>
-<body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript-Projects</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Playwrite+HR:wght@100..400&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <h3><span id="logo-text">Reza</span>Derakhshan</h3>
+      </div>
+      <div class="social">
+        <h3><a href="https://github.com/rezadrakhshan/">Github</a></h3>
+        <h3><a href="https://www.linkedin.com/in/seyedrezadrakhshan/">Linkedin</a></h3>
+        <h3><a href="mailto:srdrakhshan@gmail.com">Gmail</a></h3>
+      </div>
+    </nav>
     <header>
-        <h1>JavaScript-projects</h1>
+      <h1>JavaScript <span>Projects</span> <br><span>Develop</span> <span>By</span> Seyed Reza Derakhshan</h1>
+      <h1></h1>
+      <p id="hero-text">This <span>Website</span> contains my <span>solutions</span> to the exercises and assignments from a <span>JavaScript</span> course I'm currently taking.</p>
     </header>
-
-    <div class="search-box">
-        <input type="text" id="search" placeholder="Search projects...">
+    <div class="search">
+      <input id="search-input" type="text" placeholder="">
+      <p>Tip: Search a Project By Title</p>
     </div>
-
-    <div class="projects" id="projects">
-        <div class="project-card">
-            <img src="image/todo.png">
-            <h2>TodoApp</h2>
-            <p>a simple todo app for your task</p>
-            <a href="../Contents/TodoApp/index.html">View Project</a>
-        </div>
-        <div class="project-card">
-            <img src="image/chronobirth.png">
-            <h2>ChronoBirth</h2>
-            <p>Digital Clock && Age Calculator</p>
-            <a href="../Contents/ChronoBirth/index.html">View Project</a>
-        </div>
-        <div class="project-card">
-            <img src="image/dashboard.png">
-            <h2>Dashboard</h2>
-            <p>Book table</p>
-            <a href="../Contents/Dashboard/index.html">View Project</a>
-        </div>
-        <div class="project-card">
-            <img src="image/number.png">
-            <h2>Number guessing game</h2>
-            <p>Basic number game</p>
-            <a href="../Contents/Number guessing game/index.html">View Project</a>
-        </div>
-        <div class="project-card">
-            <img src="image/hamburgermenu.png">
-            <h2>Hamburger Menu</h2>
-            <p>Like a github...</p>
-            <a href="../Contents/Hamburger Menu/index.html">View Project</a>
-        </div>
+    <div class="project-cards">
+      <div class="card">
+        <a href="../Contents/TodoApp/index.html">
+          <img src="image/todo.png" alt="">
+        </a>
+        <h4>TodoApp</h4>
+      </div>
+      <div class="card">
+        <a href="../Contents/ChronoBirth/index.html">
+          <img src="image/chronobirth.png" alt="">
+        </a>
+        <h4>ChronoBirth</h4>
+      </div>
+      <div class="card">
+        <a href="../Contents/Dashboard/index.html">
+          <img src="image/dashboard.png" alt="">
+        </a>
+        <h4>Dashboard</h4>
+      </div>
+      <div class="card">
+        <a href="../Contents/Number guessing game/index.html">
+          <img src="image/number.png" alt="">
+        </a>
+        <h4>Number Guessing Game</h4>
+      </div>
+      <div class="card">
+        <a href="../Contents/Hamburger Menu/index.html">
+          <img src="image/hamburgermenu.png" alt="">
+        </a>
+        <h4>Hamburger Menu</h4>
+      </div>
     </div>
-    <script src="app.js"></script>
-</body>
+    <script src="js/app.js"></script>
+    <script src="js/search.js"></script>
+  </body>
 </html>
