@@ -7,7 +7,7 @@
 body {
   background-color: #fafafa;
   color: #4b5563;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 nav {
@@ -15,9 +15,10 @@ nav {
   justify-content: space-between;
   padding: 10px;
 }
-
 .social {
   display: flex;
+  justify-content: space-evenly;
+  width: 300px;
 }
 
 .social h3 {
@@ -113,6 +114,9 @@ header span {
   text-align: center;
 }
 @media (max-width: 768px) {
+  body{
+    padding: 20px;
+  }
   nav {
     flex-direction: column;
     align-items: center;
@@ -146,6 +150,7 @@ header span {
 }
 
 @media (max-width: 480px) {
+  
   header {
     font-size: 1.2rem;
     margin-top: 2rem;
