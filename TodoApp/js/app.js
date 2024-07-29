@@ -6,6 +6,12 @@ const todoTable = document.getElementsByTagName("tbody")[0];
 let todos = JSON.parse(localStorage.getItem("todos")) || [];
 let filteredTodos = todos;
 
+function NewTask(id,title,completed){
+  this.id = id
+  this.title = title
+  this.completed = completed
+}
+
 document.getElementById("Complete").addEventListener("click", (event) => {
   filteredTodos = todos.filter((item) => item.completed === true);
   renderTodos(filteredTodos);
@@ -35,14 +41,10 @@ todoForm.addEventListener("submit", function (event) {
     todoForm.reset();
     return;
   } else {
-    const newTodo = {
-      id: generateUUID(),
-      title: taskValue,
-      completed: false,
-    };
+    const newTodo = new NewTask(generateUUID(),taskValue,false)
     todos.push(newTodo);
     localStorage.setItem("todos", JSON.stringify(todos));
-    filteredTodos = todos; // Reset filter
+    filteredTodos = todos;
     renderTodos(filteredTodos);
     todoForm.reset();
   }
