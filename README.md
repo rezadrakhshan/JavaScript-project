@@ -9,6 +9,8 @@
 * Number Guessing Game
 * Dashboard
 * ChronoBirth
+* TodoApp
+* Ticketo
 
 ## About
 > This repository contains my solutions to the exercises and assignments from a JavaScript course I'm currently taking. Each exercise or assignment is stored in a separate branch, allowing me to keep track of my progress and practice through the course material.

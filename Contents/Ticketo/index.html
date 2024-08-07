@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ticketo</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+  </head>
+  <body>
+    <header>
+        <h1>Ticketo</h1>
+        <p>Cinema Reservation Ticket</p>
+    </header>
+    <h2>Choose your movie:</h2>
+    <div class="loader">
+        <div class="loader-inner">
+          <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+          </div>
+          <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+          </div>
+          <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+          </div>
+          <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+          </div>
+          <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+          </div>
+        </div>
+      </div>
+    <div class="container">
+    </div>
+    <div class="ticket-detail">
+         <h3>Are you sure about this?</h3>
+    </div>
+    <div class="payment">
+        <form action="">
+            <h1>Payment Ticket</h1>
+            <input type="text" placeholder="Card Number" required><br>
+            <input type="date" required>
+            <input type="number" placeholder="CVV2" required><br>
+            <input type="text" placeholder="Full Name On A Card" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
