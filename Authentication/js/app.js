@@ -43,6 +43,10 @@ class Main {
 }
 
 document.addEventListener("DOMContentLoaded", (e) => {
+  console.log({
+    email: "eve.holt@reqres.in",
+    password: "cityslicka",
+  });
   const form = document.getElementsByTagName("form")[0];
   new Main(form);
 });
