@@ -11,7 +11,6 @@ body{
     margin: 0%;
 }
 
-
 .container{
     box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
     display: flex;
@@ -35,6 +34,7 @@ body{
         margin-top: 2px;
     }
 }
+
 .form{
     color:#525252;
     padding: 3rem;
@@ -90,5 +90,44 @@ body{
         background-color: #7F265B;
         color: white;
         margin-top: 5px;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 820px) {
+    .container {
+        flex-direction: column;
+        width: 90%;
+        padding: 1rem;
+    }
+    .image img {
+        width: 100%;
+        border-radius: 30px 30px 0 0;
+    }
+    .form {
+        padding: 2rem 1rem;
+        height: auto;
+    }
+    .form .input input, .form button, .form .social {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        border-radius: 0;
+    }
+    .form {
+        padding: 1rem;
+    }
+    h1 {
+        font-size: 20px;
+    }
+    p {
+        font-size: 13px;
+    }
+    .form .input input, .form button, .form .social {
+        width: 100%;
     }
 }
