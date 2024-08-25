@@ -1,0 +1,87 @@
+body{
+    background-color: black;
+    color: white;
+    font-family: "Inter", sans-serif;
+}
+.hero{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.hero .rick img{
+    width: 68vh;
+}
+.hero .text .logo img{
+    width: 40vh;
+}
+.hero .text .middle h2{
+    font-size: 8vh;
+}
+.hero .text {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.container{
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+}
+.container h1{
+    text-align: center;
+    font-size: 3rem;
+}
+.container .search-bar{
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+.container .search-bar input,select{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #11b0c8;
+    color: white;
+    width: 20%;
+    &:focus{
+        outline: none;
+    }
+    &::placeholder{
+        color: white;
+    }
+}
+select{
+    width: 233px;
+} 
+
+.placeholder-option {
+    display: none;
+}
+
+.container .card-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
+    width: 80%;
+    margin-top: 10px;
+    float: left;
+}
+.container .card-list .card{
+    overflow: hidden;
+    background-color: #44c765;
+    border-radius: 10px;
+    width: 22%;
+    img{
+        width: 234px;
+    }
+    margin-top: 20px;
+}
+.container .card-list .card .text{
+    *{
+        margin: 0%;
+    }
+    padding: 20px;
+}
