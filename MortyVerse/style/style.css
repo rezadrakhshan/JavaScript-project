@@ -71,11 +71,12 @@ select{
 }
 .container .card-list .card{
     overflow: hidden;
-    background-color: #44c765;
+    background-color: #11b0c8;
     border-radius: 10px;
     width: 22%;
+    cursor: pointer;
     img{
-        width: 234px;
+        width: 240px;
     }
     margin-top: 20px;
 }
