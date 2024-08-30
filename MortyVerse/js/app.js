@@ -15,6 +15,7 @@ class Main {
     };
     this.cachedData = [];
     this.getUserFilterKeyWord();
+    this.setupModal();
   }
 
   async fetchData() {
@@ -29,18 +30,16 @@ class Main {
     list.forEach((element) => {
       const card = document.createElement("div");
       card.classList.add("card");
-      if (element.status === "Dead") {
-        card.style.backgroundColor = "gray";
-      }
       card.innerHTML = `
-            <img style="${
-              element.status === "Dead" ? "filter: grayscale(100%);" : ""
-            }" src=${element.image} alt="">
-            <div class="text">
-                <h2>${element.name}</h2>
-                <p>${element.species}</p>
-            </div>
-            `;
+        <img style="${
+          element.status === "Dead" ? "filter: grayscale(100%);" : ""
+        }" src=${element.image} alt="">
+        <div class="text">
+            <h2>${element.name}</h2>
+            <p>${element.species}</p>
+        </div>
+      `;
+      card.addEventListener("click", () => this.showModal(element));
       container.appendChild(card);
     });
   }
@@ -92,6 +91,53 @@ class Main {
 
     console.log(filteredResult);
     this.showDataInUi(filteredResult, this.cardList);
+  }
+
+  setupModal() {
+    const modal = document.getElementById("modal");
+    const closeBtn = document.querySelector(".modal .close");
+
+    closeBtn.onclick = function () {
+      modal.style.display = "none";
+    };
+
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
+  }
+
+  showModal(character) {
+    const modal = document.getElementById("modal");
+    document.getElementById("modal-image").src = character.image;
+    document.getElementById("modal-name").textContent = character.name;
+    document.getElementById(
+      "modal-species"
+    ).textContent = `Species: ${character.species}`;
+    document.getElementById(
+      "modal-gender"
+    ).textContent = `Gender: ${character.gender}`;
+    document.getElementById(
+      "modal-status"
+    ).textContent = `Status: ${character.status}`;
+    document.getElementById(
+      "modal-location"
+    ).textContent = `Last Known Location: ${character.location.name}`;
+    modal.style.display = "block";
+    this.fetchCharacterEpisodes(character);
+  }
+  async fetchCharacterEpisodes(character) {
+    const episodeContainer = document.querySelector(".modal-episodes");
+    const characterEpisodeList = character.episode;
+    episodeContainer.innerHTML = ""
+    characterEpisodeList.forEach(async (item) => {
+      const episodeResponse = await axios.get(item);
+      const episodeResult = episodeResponse.data;
+      const episodeP = document.createElement("p");
+      episodeP.textContent = `${episodeResult.episode} : ${episodeResult.name}`;
+      episodeContainer.appendChild(episodeP)
+    });
   }
 }
 
