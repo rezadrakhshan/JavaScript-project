@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MortyVerse Data Hub</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main style="display: none;">
+      <div class="hero">
+        <div class="text">
+          <div class="logo">
+            <img src="images/logo.png" alt="" />
+          </div>
+          <div class="middle">
+            <h2>
+              Find out everything <br />
+              in one <span style="color: #11b0c8">place</span>.
+            </h2>
+            <p style="color: #44c765">wubba lubba dub dub!</p>
+          </div>
+          <div class="bottom">
+            <p>
+              Characters, locations, <br />
+              episodes and more.
+            </p>
+          </div>
+        </div>
+        <div class="rick">
+          <img src="images/rick.png" alt="" />
+        </div>
+      </div>
+      <div class="container">
+        <h1>The Rick And Morty Docs</h1>
+        <div class="search-bar">
+          <input type="text" placeholder="Filter by name..." id="searchbyname" />
+          <select name="Species" id="Species">
+            <option class="placeholder-option" value="" disabled selected>
+              Species
+            </option>
+            <option value="Alien">Alien</option>
+            <option value="Human">Human</option>
+          </select>
+          <select name="Gender" id="Gender">
+            <option class="placeholder-option" value="" disabled selected>
+              Gender
+            </option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+          <select name="Status" id="Status">
+            <option class="placeholder-option" alue="" disabled selected>
+              Status
+            </option>
+            <option value="Alive">Alive</option>
+            <option value="Dead">Dead</option>
+          </select>
+        </div>
+        <div class="card-list"></div>
+        <div id="modal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-body">
+              <img id="modal-image" src="" alt="Character Image" />
+              <div class="modal-text">
+                <h2 id="modal-name"></h2>
+                <p id="modal-species"></p>
+                <p id="modal-gender"></p>
+                <p id="modal-status"></p>
+                <p id="modal-location"></p>
+              </div>
+            </div>
+            <div class="modal-episodes">
+              <h3>List Of Episodes :</h3>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+      <div class="loading">
+        <span class="loader"></span>
+      </div>
+    <script
+      src="https://kit.fontawesome.com/a80a00ec6d.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
