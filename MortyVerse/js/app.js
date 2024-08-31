@@ -3,6 +3,8 @@ const searchInput = document.getElementById("searchbyname");
 const speciesSelect = document.getElementById("Species");
 const genderSelect = document.getElementById("Gender");
 const statusSelect = document.getElementById("Status");
+const mainElement = document.getElementsByTagName("main")[0]
+const loader = document.querySelector(".loading")
 
 class Main {
   constructor(cardList) {
@@ -135,7 +137,7 @@ class Main {
       const episodeResponse = await axios.get(item);
       const episodeResult = episodeResponse.data;
       const episodeP = document.createElement("p");
-      episodeP.textContent = `${episodeResult.episode} : ${episodeResult.name}`;
+      episodeP.textContent = `${episodeResult.episode} : ${episodeResult.name} in ${episodeResult.air_date}`;
       episodeContainer.appendChild(episodeP)
     });
   }
@@ -145,4 +147,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   const main = new Main(cardList);
   const data = await main.fetchData();
   main.showDataInUi(data, cardList);
+  loader.remove()
+  mainElement.style.display = "block"
 });
