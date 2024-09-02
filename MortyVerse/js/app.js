@@ -3,8 +3,9 @@ const searchInput = document.getElementById("searchbyname");
 const speciesSelect = document.getElementById("Species");
 const genderSelect = document.getElementById("Gender");
 const statusSelect = document.getElementById("Status");
-const mainElement = document.getElementsByTagName("main")[0]
-const loader = document.querySelector(".loading")
+const mainElement = document.getElementsByTagName("main")[0];
+const loader = document.querySelector(".loading");
+const userFavoriteList = JSON.parse(localStorage.getItem("fav")) || [];
 
 class Main {
   constructor(cardList) {
@@ -20,6 +21,10 @@ class Main {
     this.setupModal();
   }
 
+  checkIsCharacterInFavoriteList(id) {
+    return userFavoriteList.some((item) => item.id === id);
+  }
+
   async fetchData() {
     const URL = "https://rickandmortyapi.com/api/character";
     const response = await axios.get(URL);
@@ -32,6 +37,7 @@ class Main {
     list.forEach((element) => {
       const card = document.createElement("div");
       card.classList.add("card");
+      card.setAttribute("data-id", element.id);
       card.innerHTML = `
         <img style="${
           element.status === "Dead" ? "filter: grayscale(100%);" : ""
@@ -99,9 +105,11 @@ class Main {
     const modal = document.getElementById("modal");
     const closeBtn = document.querySelector(".modal .close");
 
-    closeBtn.onclick = function () {
-      modal.style.display = "none";
-    };
+    if (closeBtn) {
+      closeBtn.onclick = function () {
+        modal.style.display = "none";
+      };
+    }
 
     window.onclick = function (event) {
       if (event.target == modal) {
@@ -112,8 +120,19 @@ class Main {
 
   showModal(character) {
     const modal = document.getElementById("modal");
+    modal.setAttribute("data-id", character.id);
+    const heartElement = document.querySelector(".heart");
+
+    if (heartElement) {
+      heartElement.innerHTML = `<i class="${
+        this.checkIsCharacterInFavoriteList(character.id)
+          ? "remove-fav fa-solid fa-heart"
+          : "add-fav fa-regular fa-heart"
+      }" data-bs-toggle="tooltip" title="Click to add item in your favorites list"></i>`;
+    }
+
     document.getElementById("modal-image").src = character.image;
-    document.getElementById("modal-name").textContent = character.name;
+    document.getElementById("modal-name").innerHTML = character.name;
     document.getElementById(
       "modal-species"
     ).textContent = `Species: ${character.species}`;
@@ -128,18 +147,55 @@ class Main {
     ).textContent = `Last Known Location: ${character.location.name}`;
     modal.style.display = "block";
     this.fetchCharacterEpisodes(character);
+
+    const addFavButton = document.querySelector(".add-fav");
+    const removeFavButton = document.querySelector(".remove-fav");
+
+    if (addFavButton) {
+      addFavButton.addEventListener("click", async (e) => {
+        const modalId = modal.getAttribute("data-id");
+        const characterUserSelected = this.cachedData.find(
+          (item) => item.id == modalId
+        );
+        if (
+          characterUserSelected &&
+          !this.checkIsCharacterInFavoriteList(characterUserSelected.id)
+        ) {
+          userFavoriteList.push(characterUserSelected);
+          localStorage.setItem("fav", JSON.stringify(userFavoriteList));
+          this.showModal(character);
+        }
+      });
+    }
+
+    if (removeFavButton) {
+      removeFavButton.addEventListener("click", async (e) => {
+        const modalId = modal.getAttribute("data-id");
+        const characterIndex = userFavoriteList.findIndex(
+          (item) => item.id == modalId
+        );
+        if (characterIndex !== -1) {
+          userFavoriteList.splice(characterIndex, 1);
+          localStorage.setItem("fav", JSON.stringify(userFavoriteList));
+          this.showModal(character);
+        }
+      });
+    }
   }
+
   async fetchCharacterEpisodes(character) {
     const episodeContainer = document.querySelector(".modal-episodes");
+    if (!episodeContainer) return;
+
     const characterEpisodeList = character.episode;
-    episodeContainer.innerHTML = ""
-    characterEpisodeList.forEach(async (item) => {
+    episodeContainer.innerHTML = "";
+    for (const item of characterEpisodeList) {
       const episodeResponse = await axios.get(item);
       const episodeResult = episodeResponse.data;
       const episodeP = document.createElement("p");
       episodeP.textContent = `${episodeResult.episode} : ${episodeResult.name} in ${episodeResult.air_date}`;
-      episodeContainer.appendChild(episodeP)
-    });
+      episodeContainer.appendChild(episodeP);
+    }
   }
 }
 
@@ -147,6 +203,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   const main = new Main(cardList);
   const data = await main.fetchData();
   main.showDataInUi(data, cardList);
-  loader.remove()
-  mainElement.style.display = "block"
+  loader.remove();
+  mainElement.style.display = "block";
 });

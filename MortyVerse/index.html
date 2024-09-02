@@ -14,6 +14,11 @@
   </head>
   <body>
     <main style="display: none;">
+      <header>
+        <a href="https://github.com/rezadrakhshan/JavaScript-project/tree/Mortyverse_Data_Hub" target="_blank">Docs</a>
+        <a href="#Character">Character</a>
+        <a href="">Favorites list</a>
+      </header>
       <div class="hero">
         <div class="text">
           <div class="logo">
@@ -37,7 +42,7 @@
           <img src="images/rick.png" alt="" />
         </div>
       </div>
-      <div class="container">
+      <div class="container" id="Character">
         <h1>The Rick And Morty Docs</h1>
         <div class="search-bar">
           <input type="text" placeholder="Filter by name..." id="searchbyname" />
@@ -70,7 +75,11 @@
             <div class="modal-body">
               <img id="modal-image" src="" alt="Character Image" />
               <div class="modal-text">
-                <h2 id="modal-name"></h2>
+                <div class="title">
+                  <h2 id="modal-name"></h2>
+                  <div class="heart">
+                  </div>
+                </div>
                 <p id="modal-species"></p>
                 <p id="modal-gender"></p>
                 <p id="modal-status"></p>
