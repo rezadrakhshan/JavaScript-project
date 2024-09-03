@@ -6,6 +6,7 @@ const statusSelect = document.getElementById("Status");
 const mainElement = document.getElementsByTagName("main")[0];
 const loader = document.querySelector(".loading");
 const userFavoriteList = JSON.parse(localStorage.getItem("fav")) || [];
+const dialog = document.querySelector(".main-dialog");
 
 class Main {
   constructor(cardList) {
@@ -19,6 +20,21 @@ class Main {
     this.cachedData = [];
     this.getUserFilterKeyWord();
     this.setupModal();
+    this.ShowFavInDialog();
+    this.addEventListener();
+  }
+
+  addEventListener() {
+    dialog.addEventListener("click", (e) => {
+      if (e.target.classList.contains("remove-fav-button")) {
+        const selectedFav = e.target.parentElement.getAttribute("data-id");
+        const newFavList = userFavoriteList.filter(
+          (item) => item.id != selectedFav
+        );
+        localStorage.setItem("fav", JSON.stringify(newFavList));
+        window.location.reload()
+      }
+    });
   }
 
   checkIsCharacterInFavoriteList(id) {
@@ -164,6 +180,7 @@ class Main {
           userFavoriteList.push(characterUserSelected);
           localStorage.setItem("fav", JSON.stringify(userFavoriteList));
           this.showModal(character);
+          this.ShowFavInDialog();
         }
       });
     }
@@ -178,6 +195,7 @@ class Main {
           userFavoriteList.splice(characterIndex, 1);
           localStorage.setItem("fav", JSON.stringify(userFavoriteList));
           this.showModal(character);
+          this.ShowFavInDialog();
         }
       });
     }
@@ -196,6 +214,20 @@ class Main {
       episodeP.textContent = `${episodeResult.episode} : ${episodeResult.name} in ${episodeResult.air_date}`;
       episodeContainer.appendChild(episodeP);
     }
+  }
+  ShowFavInDialog() {
+    dialog.innerHTML = "";
+    userFavoriteList.forEach((item) => {
+      const row = document.createElement("div");
+      row.classList.add("fav-item");
+      row.setAttribute("data-id", item.id);
+      row.innerHTML = `
+              <img src="${item.image}" alt="">
+        <p>${item.name}</p>
+        <i class="remove-fav-button fa fa-trash"></i>
+      `;
+      dialog.appendChild(row);
+    });
   }
 }
 

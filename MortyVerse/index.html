@@ -13,11 +13,24 @@
     />
   </head>
   <body>
-    <main style="display: none;">
+    <dialog id="dialog">
+      <h2>List of your favorite characters</h2>
+      <div class="main-dialog">
+        
+      </div>
+      <button onclick="window.dialog.close();" aria-label="close" class="x">
+        ❌
+      </button>
+    </dialog>
+    <main style="display: none">
       <header>
-        <a href="https://github.com/rezadrakhshan/JavaScript-project/tree/Mortyverse_Data_Hub" target="_blank">Docs</a>
+        <a
+          href="https://github.com/rezadrakhshan/JavaScript-project/tree/Mortyverse_Data_Hub"
+          target="_blank"
+          >Docs</a
+        >
         <a href="#Character">Character</a>
-        <a href="">Favorites list</a>
+        <a onclick="window.dialog.showModal();">Favorites list</a>
       </header>
       <div class="hero">
         <div class="text">
@@ -45,7 +58,11 @@
       <div class="container" id="Character">
         <h1>The Rick And Morty Docs</h1>
         <div class="search-bar">
-          <input type="text" placeholder="Filter by name..." id="searchbyname" />
+          <input
+            type="text"
+            placeholder="Filter by name..."
+            id="searchbyname"
+          />
           <select name="Species" id="Species">
             <option class="placeholder-option" value="" disabled selected>
               Species
@@ -77,8 +94,7 @@
               <div class="modal-text">
                 <div class="title">
                   <h2 id="modal-name"></h2>
-                  <div class="heart">
-                  </div>
+                  <div class="heart"></div>
                 </div>
                 <p id="modal-species"></p>
                 <p id="modal-gender"></p>
@@ -88,15 +104,14 @@
             </div>
             <div class="modal-episodes">
               <h3>List Of Episodes :</h3>
-  
             </div>
           </div>
         </div>
       </div>
     </main>
-      <div class="loading">
-        <span class="loader"></span>
-      </div>
+    <div class="loading">
+      <span class="loader"></span>
+    </div>
     <script
       src="https://kit.fontawesome.com/a80a00ec6d.js"
       crossorigin="anonymous"
