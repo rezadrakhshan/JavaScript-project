@@ -23,16 +23,30 @@
         ❌
       </button>
     </dialog>
-    <main style="display: none">
-      <header>
-        <a
-          href="https://github.com/rezadrakhshan/JavaScript-project/tree/Mortyverse_Data_Hub"
-          target="_blank"
-          >Docs</a
-        >
-        <a href="#Character">Character</a>
-        <a onclick="window.dialog.showModal();">Favorites list</a>
-      </header>
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <a href="">
+            <img src="images/logo.png" alt="MortyVerse Logo" />
+          </a>
+        </div>
+        <nav class="navbar">
+          <ul>
+            <li><a href="#Character">Characters</a></li>
+            <li><a href="#">Episodes</a></li>
+            <li><a href="#">Locations</a></li>
+            <li><a href="#favorites" onclick="window.dialog.showModal();">Favorites</a></li>
+          </ul>
+        </nav>
+        <div class="cta">
+          <a href="https://github.com/rezadrakhshan/JavaScript-project/tree/Mortyverse_Data_Hub" target="_blank" class="cta-button">Docs</a>
+        </div>
+        <div class="hamburger-menu">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </header>
+    
       <div class="hero">
         <div class="text">
           <div class="logo">

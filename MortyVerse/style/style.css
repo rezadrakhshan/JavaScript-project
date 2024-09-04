@@ -244,21 +244,122 @@ body::-webkit-scrollbar , .modal-episodes::-webkit-scrollbar {
 }
 
 header {
-  margin: auto;
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 10px;
-  width: 50%;
-  font-size: large;
+  padding: 20px 0;
+  top: 0;
+  z-index: 1000;
 }
-header a{
-  text-decoration: none;
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo img {
+  width: 100px;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.1);
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li {
+  position: relative;
+}
+
+.navbar ul li a {
   color: white;
-  &:hover{
-    color: #11b0c8;
-    transition: all 0.5s ease;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+  color: #11b0c8;
+}
+
+.cta {
+  display: none;
+}
+
+.cta-button {
+  background-color: #11b0c8;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #0d869b;
+  transform: scale(1.05);
+}
+
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+  color: white;
+}
+
+.hamburger-menu i {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #111;
+    padding: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .cta {
+    display: block;
+    margin-left: 20px;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+
+  .navbar ul li a {
+    font-size: 1.2rem;
   }
 }
+
+@media (min-width: 769px) {
+  .cta {
+    display: block;
+  }
+
+  .hamburger-menu {
+    display: none;
+  }
+}
+
 
 .modal-episodes{
   height: 50vh;
