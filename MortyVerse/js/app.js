@@ -7,6 +7,9 @@ const mainElement = document.getElementsByTagName("main")[0];
 const loader = document.querySelector(".loading");
 const userFavoriteList = JSON.parse(localStorage.getItem("fav")) || [];
 const dialog = document.querySelector(".main-dialog");
+const nextPage = document.querySelector("#next");
+const previousPage = document.querySelector("#previous");
+const numOfPage = document.querySelectorAll(".num_of_page");
 
 class Main {
   constructor(cardList) {
@@ -22,6 +25,7 @@ class Main {
     this.setupModal();
     this.ShowFavInDialog();
     this.addEventListener();
+    this.pageCount = 1;
   }
 
   addEventListener() {
@@ -32,8 +36,33 @@ class Main {
           (item) => item.id != selectedFav
         );
         localStorage.setItem("fav", JSON.stringify(newFavList));
-        window.location.reload()
+        window.location.reload();
       }
+    });
+    nextPage.addEventListener("click", async () => {
+      if (this.pageCount === 42) {
+        this.pageCount = 1;
+      } else {
+        this.pageCount += 1;
+      }
+      const data = await this.fetchData();
+      this.showDataInUi(data, this.cardList);
+    });
+    previousPage.addEventListener("click", async () => {
+      if (this.pageCount === 1) {
+        this.pageCount = 42;
+      } else {
+        this.pageCount -= 1;
+      }
+      const data = await this.fetchData();
+      this.showDataInUi(data, this.cardList);
+    });
+    numOfPage.forEach((item) => {
+      item.addEventListener("click", async () => {
+        this.pageCount = Number(item.textContent);
+        const data = await this.fetchData();
+        this.showDataInUi(data, this.cardList);
+      });
     });
   }
 
@@ -42,7 +71,7 @@ class Main {
   }
 
   async fetchData() {
-    const URL = "https://rickandmortyapi.com/api/character";
+    const URL = `https://rickandmortyapi.com/api/character?page=${this.pageCount}`;
     const response = await axios.get(URL);
     this.cachedData = response.data.results;
     return this.cachedData;
