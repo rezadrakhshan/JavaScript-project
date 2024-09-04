@@ -356,3 +356,82 @@ dialog {
 .fav-item i{
   color: red;
 }
+
+footer {
+  background-color: #111;
+  padding: 40px 20px;
+  color: white;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.footer-content .logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-content .logo img {
+  width: 80px;
+  margin-bottom: 10px;
+}
+
+.footer-content .logo p {
+  font-size: 1rem;
+  margin: 0;
+  color: #aaa;
+}
+
+.footer-content .social-media {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-content .social-media a {
+  color: white;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.footer-content .social-media a:hover {
+  color: #11b0c8;
+}
+
+.footer-content .footer-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-content .footer-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.footer-content .footer-links a:hover {
+  color: #11b0c8;
+}
+
+.footer-bottom {
+  margin-top: 30px;
+  border-top: 1px solid #333;
+  padding-top: 10px;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+
