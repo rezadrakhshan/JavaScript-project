@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MortyVerse Data Hub</title>
+    <title>MortyVerse</title>
+    <link rel="icon" href="images/icon.ico">
     <link rel="stylesheet" href="style/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,12 +14,44 @@
     />
   </head>
   <body>
-    <main style="display: none;">
+    <dialog id="dialog">
+      <h2>List of your favorite characters</h2>
+      <div class="main-dialog">
+        
+      </div>
+      <button onclick="window.dialog.close();" aria-label="close" class="x">
+        ❌
+      </button>
+    </dialog>
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <a href="">
+            <img src="images/logo.png" alt="MortyVerse Logo" />
+          </a>
+        </div>
+        <nav class="navbar">
+          <ul>
+            <li><a href="#Character">Characters</a></li>
+            <li><a href="#">Episodes</a></li>
+            <li><a href="#">Locations</a></li>
+            <li><a href="#favorites" onclick="window.dialog.showModal();">Favorites</a></li>
+          </ul>
+        </nav>
+        <div class="cta">
+          <a href="https://github.com/rezadrakhshan/JavaScript-project/tree/Mortyverse_Data_Hub" target="_blank" class="cta-button">Docs</a>
+        </div>
+        <div class="hamburger-menu">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </header>
+    
       <div class="hero">
         <div class="text">
-          <div class="logo">
+          <!-- <div class="logo">
             <img src="images/logo.png" alt="" />
-          </div>
+          </div> -->
           <div class="middle">
             <h2>
               Find out everything <br />
@@ -37,10 +70,14 @@
           <img src="images/rick.png" alt="" />
         </div>
       </div>
-      <div class="container">
+      <div class="container" id="Character">
         <h1>The Rick And Morty Docs</h1>
         <div class="search-bar">
-          <input type="text" placeholder="Filter by name..." id="searchbyname" />
+          <input
+            type="text"
+            placeholder="Filter by name..."
+            id="searchbyname"
+          />
           <select name="Species" id="Species">
             <option class="placeholder-option" value="" disabled selected>
               Species
@@ -70,7 +107,10 @@
             <div class="modal-body">
               <img id="modal-image" src="" alt="Character Image" />
               <div class="modal-text">
-                <h2 id="modal-name"></h2>
+                <div class="title">
+                  <h2 id="modal-name"></h2>
+                  <div class="heart"></div>
+                </div>
                 <p id="modal-species"></p>
                 <p id="modal-gender"></p>
                 <p id="modal-status"></p>
@@ -79,15 +119,46 @@
             </div>
             <div class="modal-episodes">
               <h3>List Of Episodes :</h3>
-  
             </div>
           </div>
         </div>
+        <div class="container-pagination">
+          <ul class="pagination">
+            <li><a id="previous">Previous</a></li>
+            <li><a class="num_of_page">1</a></li>
+            <li><a class="num_of_page">2</a></li>
+            <li><a class="num_of_page">3</a></li>
+            <li><a class="num_of_page">4</a></li>
+            <li><a class="num_of_page">5</a></li>
+            <li><a class="num_of_page">6</a></li>
+            <li><a class="num_of_page">7</a></li>
+            <li><a class="num_of_page">8</a></li>
+            <li><a id="next">Next</a></li>
+          </ul>
+        </div>
       </div>
     </main>
-      <div class="loading">
-        <span class="loader"></span>
+    <div class="loading">
+      <span class="loader"></span>
+    </div>
+    <footer>
+      <div class="footer-content">
+        <div class="logo">
+          <img src="images/logo.png" alt="MortyVerse Logo" />
+          <p>Your go-to place for all things Rick and Morty.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#Character">Characters</a>
+          <a href="#">Episodes</a>
+          <a href="#">Locations</a>
+          <a href="#">Contact Us</a>
+        </div>
       </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 MortyVerse. All rights reserved.</p>
+      </div>
+    </footer>
+    
     <script
       src="https://kit.fontawesome.com/a80a00ec6d.js"
       crossorigin="anonymous"
