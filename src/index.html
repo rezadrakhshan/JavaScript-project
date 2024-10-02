@@ -1,31 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>QuizApp</title>
-    <link href="css/output.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap" rel="stylesheet">
-</head>
-<body class="overflow-hidden w-screen">
-  <div class="login bg-[#004643] h-screen flex items-center justify-center">
-    <section class="flex flex-col items-center gap-10">
-      <img src="img/hero.png" alt="" class="w-[150px]">
-      <form class="loginForm">
-        <label for="" class="text-primary">Enter your name:</label><br>
-        <input type="text" placeholder="John Deh" name="username" class="p-3 rounded-xl w-[300px] bg-transparent text-white border-2 border-white focus:outline-none"><br>
-        <br>
-        <br>
-        <input type="submit" value="Start" class="text-center w-[300px] p-3 rounded-xl text-primary bg-[#F8C660]">
-      </form>
+    <link href="css/output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="overflow-hidden w-screen">
+    <div class="login bg-[#004643] h-screen items-center justify-center hidden">
+      <section class="flex flex-col items-center gap-10">
+        <img src="img/hero.png" alt="" class="w-[150px]" />
+        <form class="loginForm">
+          <label for="" class="text-primary">Enter your name:</label><br />
+          <input
+            type="text"
+            placeholder="John Deh"
+            name="username"
+            class="p-3 rounded-xl w-[300px] bg-transparent text-white border-2 border-white focus:outline-none"
+          /><br />
+          <br />
+          <br />
+          <input
+            type="submit"
+            value="Start"
+            class="text-center w-[300px] p-3 rounded-xl text-primary bg-[#F8C660]"
+          />
+        </form>
+      </section>
+    </div>
+    <section class="bg-[#EFF0F3] w-screen h-screen items-center justify-center font-bold">
+      <div class="container flex flex-col items-center gap-3">
+        <span class="font-bold">7/10</span>
+        <div class="timer relative top-[50px]">
+          <div class="bg-[#004643] w-[90px] h-[90px] rounded-full p-[10px]">
+            <div
+              class="bg-white w-[70px] h-[70px] rounded-full flex justify-center align-middle"
+            >
+              <span class="relative top-[20px] font-bold">30</span>
+            </div>
+          </div>
+        </div>
+        <div class="question-box w-[400px] h-[150px] bg-white p-10 rounded-2xl">
+          <p class="font-bold">
+            In what year did the United States host the FIFA World Cup for the
+            first time?
+          </p>
+        </div>
+        <div class="answer-box">
+          <div
+            class="answer w-[400px] bg-white p-3 rounded-2xl flex justify-between"
+          >
+            <span>1986</span
+            ><svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="10" cy="10" r="9.5" stroke="black" />
+            </svg>
+          </div>
+          <br />
+          <div class="answer w-[400px] bg-[#ABD1C6] p-3 rounded-2xl flex justify-between">
+            <span>1986</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="10" fill="#004643"/>
+              <path d="M10 13.6L15.9 7.7C16.0833 7.51667 16.3167 7.425 16.6 7.425C16.8833 7.425 17.1167 7.51667 17.3 7.7C17.4833 7.88334 17.575 8.11667 17.575 8.4C17.575 8.68334 17.4833 8.91667 17.3 9.1L10.7 15.7C10.5 15.9 10.2667 16 10 16C9.73334 16 9.5 15.9 9.3 15.7L6.7 13.1C6.51667 12.9167 6.425 12.6833 6.425 12.4C6.425 12.1167 6.51667 11.8833 6.7 11.7C6.88334 11.5167 7.11667 11.425 7.4 11.425C7.68334 11.425 7.91667 11.5167 8.1 11.7L10 13.6Z" fill="white"/>
+              </svg>
+              
+          </div>
+          <br />
+          <div
+            class="answer w-[400px] bg-white p-3 rounded-2xl flex justify-between"
+          >
+            <span>1986</span
+            ><svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="10" cy="10" r="9.5" stroke="black" />
+            </svg>
+          </div>
+          <br />
+          <div
+            class="answer w-[400px] bg-white p-3 rounded-2xl flex justify-between"
+          >
+            <span>1986</span
+            ><svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="10" cy="10" r="9.5" stroke="black" />
+            </svg>
+          </div>
+        </div>
+        <button class="text-center w-[400px] p-3 rounded-2xl text-primary bg-[#004643]">Next</button>
+      </div>
     </section>
-  </div>
-  <section>
-    <span>7/10</span>
-  </section>
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="js/app.js"></script>
-</body>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
 </html>
