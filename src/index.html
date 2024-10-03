@@ -13,7 +13,7 @@
     />
   </head>
   <body class="overflow-hidden w-screen">
-    <div class="login bg-[#004643] h-screen items-center justify-center hidden">
+    <div class="login bg-[#004643] h-screen items-center justify-center">
       <section class="flex flex-col items-center gap-10">
         <img src="img/hero.png" alt="" class="w-[150px]" />
         <form class="loginForm">
@@ -36,7 +36,7 @@
     </div>
     <section class="bg-[#EFF0F3] w-screen h-screen items-center justify-center font-bold">
       <div class="container flex flex-col items-center gap-3">
-        <span class="font-bold">7/10</span>
+        <span class="font-bold question-counter"></span>
         <div class="timer relative top-[50px]">
           <div class="bg-[#004643] w-[90px] h-[90px] rounded-full p-[10px]">
             <div
@@ -46,7 +46,7 @@
             </div>
           </div>
         </div>
-        <div class="question-box w-[400px] h-[150px] bg-white p-10 rounded-2xl">
+        <div class="question-box w-[400px] h-[150px] bg-white p-10 rounded-2xl shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px]">
           <p class="question-text font-bold">
           </p>
         </div>
@@ -105,7 +105,7 @@
             </svg>
           </div> -->
         </div>
-        <button class="text-center w-[400px] p-3 rounded-2xl text-primary bg-[#004643]">Next</button>
+        <button class="submit-btn text-center w-[400px] p-3 rounded-2xl text-primary bg-[#004643]" disabled>Next</button>
       </div>
     </section>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
