@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuizApp</title>
+    <link href="css/output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="overflow-hidden w-screen">
+    <div class="login bg-[#004643] h-screen items-center justify-center">
+      <section class="flex flex-col items-center gap-10">
+        <img src="img/hero.png" alt="" class="w-[150px] mt-[11%]" />
+        <form class="loginForm">
+          <label for="" class="text-primary">Enter your name:</label><br />
+          <input
+            type="text"
+            placeholder="John Deh"
+            name="username"
+            class="p-3 rounded-xl w-[300px] bg-transparent text-white border-2 border-white focus:outline-none"
+            required
+          /><br />
+          <br />
+          <br />
+          <input
+            type="submit"
+            value="Start"
+            class="text-center w-[300px] p-3 rounded-xl text-primary bg-[#F8C660] cursor-pointer"
+          />
+        </form>
+      </section>
+    </div>
+    <section class="bg-[#EFF0F3] w-screen h-screen items-center justify-center font-bold">
+      <div class="container flex flex-col items-center gap-3">
+        <span class="font-bold question-counter"></span>
+        <div class="timer relative top-[50px]">
+          <div class="bg-[#004643] w-[90px] h-[90px] rounded-full p-[10px]">
+            <div
+              class="bg-white w-[70px] h-[70px] rounded-full flex justify-center align-middle"
+            >
+              <span class="countdown relative top-[20px] font-bold">30</span>
+            </div>
+          </div>
+        </div>
+        <div class="question-box w-[400px] h-[150px] bg-white p-10 rounded-2xl shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px]">
+          <p class="question-text font-bold">
+          </p>
+        </div>
+        <div class="answer-box flex flex-col gap-[20px]">
+        </div>
+        <button class="submit-btn text-center w-[400px] p-3 rounded-2xl text-primary bg-[#004643]" disabled>Next</button>
+      </div>
+    </section>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
