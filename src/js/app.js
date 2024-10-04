@@ -16,14 +16,15 @@ class Main {
       true: 0,
       false: 0,
     };
+    this.timerCount = 30;
     this.addEventListener();
-    this.getData();
   }
   addEventListener() {
     this.loginForm.addEventListener("submit", (e) => {
       e.preventDefault();
       this.userName = e.target.username.value;
-      loginSection.remove();
+      this.login.remove();
+      this.getData();
     });
   }
   async getData() {
@@ -32,7 +33,21 @@ class Main {
     this.question = response.data;
     this.showQuestion();
   }
+  timer() {
+    const interval = setInterval(() => {
+      this.timerCount -= 1;
+      document.querySelector(".countdown").textContent = this.timerCount;
+
+      if (this.timerCount === 0) {
+        clearInterval(interval);
+        this.userStats.false += 1;
+        this.questionNum += 1;
+        this.showQuestion();
+      }
+    }, 1000);
+  }
   showQuestion() {
+    this.timerCount = 30;
     answerBox.innerHTML = "";
     if (this.questionNum >= this.question.length) {
       questionText.innerText = `
@@ -40,12 +55,24 @@ class Main {
       Correct answer : ${this.userStats.true}
       Incorrect answer : ${this.userStats.false}
       `;
-      document.querySelector(".submit-btn").remove()
-      const playAgain = document.createElement("button")
-      playAgain.classList.add("text-center", "w-[400px]", "p-3", "rounded-2xl", "text-primary", "bg-[#004643]")
-      playAgain.setAttribute('onclick', 'window.location.reload()');
-      playAgain.textContent = "Play Again"
-      answerBox.appendChild(playAgain)
+      document.querySelector(".submit-btn").style.display = "none";
+      const playAgain = document.createElement("button");
+      playAgain.classList.add(
+        "text-center",
+        "w-[400px]",
+        "p-3",
+        "rounded-2xl",
+        "text-primary",
+        "bg-[#004643]"
+      );
+      playAgain.addEventListener("click", () => {
+        window.location.reload()
+      });
+      playAgain.textContent = "Play Again";
+      answerBox.appendChild(playAgain);
+      document.querySelector(".timer").remove()
+      document.querySelector(".question-box").classList.remove("p-10")
+      document.querySelector(".question-box").classList.add("text-center")
       return;
     }
     const selectedQuestion = this.question[this.questionNum];
@@ -75,11 +102,14 @@ class Main {
             </svg>`;
       answerBox.appendChild(answer);
     });
-    this.questionCounter()
+    this.timer();
+    this.questionCounter();
     this.changeAnswerStatus();
   }
-  questionCounter(){
-    document.querySelector(".question-counter").textContent = `${this.questionNum + 1}/${this.question.length}`
+  questionCounter() {
+    document.querySelector(".question-counter").textContent = `${
+      this.questionNum + 1
+    }/${this.question.length}`;
   }
   changeAnswerStatus() {
     answerBox.addEventListener("click", (e) => {
@@ -127,6 +157,6 @@ class Main {
   }
 }
 
-document.addEventListener("DOMContentLoaded", (e) => {
+document.addEventListener("DOMContentLoaded", () => {
   new Main(loginSection, loginForm);
 });

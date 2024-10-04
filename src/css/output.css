@@ -600,12 +600,16 @@ video {
   top: 50px;
 }
 
-.flex {
-  display: flex;
+.mt-\[11\%\] {
+  margin-top: 11%;
 }
 
-.hidden {
-  display: none;
+.block {
+  display: block;
+}
+
+.flex {
+  display: flex;
 }
 
 .h-\[150px\] {
