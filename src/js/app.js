@@ -17,6 +17,7 @@ class Main {
       false: 0,
     };
     this.timerCount = 30;
+    this.interval = null; 
     this.addEventListener();
   }
   addEventListener() {
@@ -34,12 +35,18 @@ class Main {
     this.showQuestion();
   }
   timer() {
-    const interval = setInterval(() => {
+    if (this.interval) {
+      clearInterval(this.interval);
+    }
+  
+    document.querySelector(".countdown").textContent = this.timerCount;
+  
+    this.interval = setInterval(() => {
       this.timerCount -= 1;
       document.querySelector(".countdown").textContent = this.timerCount;
-
+  
       if (this.timerCount === 0) {
-        clearInterval(interval);
+        clearInterval(this.interval);
         this.userStats.false += 1;
         this.questionNum += 1;
         this.showQuestion();
